@@ -1,0 +1,107 @@
+header {
+    position: fixed;
+    z-index: 999;
+    padding: 20px 15px;
+    width: 100%;
+    display: flex;
+    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,.2);
+    height: 65px;
+    @extend .shadow-lg;
+    a:first-child {
+        padding-left: 0;
+    }
+    a {
+        color: white;
+        padding: 0 10px;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+}
+main {
+    padding-bottom: 75px;
+}
+.fit-cover {
+    object-fit: cover;
+}
+
+.fancy {
+    &-orange::after {
+        background: linear-gradient(
+            to right,
+            rgb(238 156 167 / 0.7),
+            rgb(255 221 225 / 0.3)
+        );
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        bottom: 0;
+    }
+    &-sky::after {
+        background: linear-gradient(to right, #fc5c7cb3, #6a82fbb3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+.custom-player {
+    background: #343a40;
+    height: 75px;
+
+    .progress {
+        height: 5px;
+        border-radius: 0;
+        background: #212529;
+        &-bar {
+            border-radius: 0 5px 5px;
+            background: #007bff;
+        }
+    }
+}
+.cmp-range {
+    z-index: 3;
+    position: relative;
+
+    &_fill-low {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5px;
+        background: #007bff;
+    }
+
+    input[type=range]{
+        -webkit-appearance: none;
+        cursor: pointer;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        height: 5px;
+        background: #212529;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 12px;
+        width: 12px;
+        margin-top: -3px;
+        border-radius: 50%;
+        background: #007bff;
+    }
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #212529;
+    }
+
+}

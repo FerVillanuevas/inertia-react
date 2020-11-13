@@ -1,0 +1,24 @@
+.playlist {
+    top: 0;
+    right: 0;
+    backdrop-filter: blur(5px);
+    background: rgb(33 37 41 / .95);
+    bottom: 0;
+    position: fixed;
+    padding-bottom: 75px;
+    overflow-y: auto;
+    top: 65px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.playlist .list-group-item-action {
+    background: transparent;
+    cursor: pointer;
+}
+.playlist .list-group-item-action:hover {
+    background: rgba(0,0,0, .3);
+}
+.playlist .list-group-item-action.playing {
+    background: rgba(0,0,0,.5);
+}
