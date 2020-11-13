@@ -24,15 +24,15 @@ class DatabaseSeeder extends Seeder
         ]);
         Sound::create([
             "name" => "Figures",
-            "src" => "http://stack.test/audios/audio1.mp3"
+            "src" => "/audios/audio1.mp3"
         ]);
         Sound::create([
             "name" => "Coffin",
-            "src" => "http://stack.test/audios/audio2.mp3"
+            "src" => "/audios/audio2.mp3"
         ]);
         Sound::create([
             "name" => "The Monster",
-            "src" => "http://stack.test/audios/audio3.mp3"
+            "src" => "/audios/audio3.mp3"
         ]);
     }
 }
