@@ -34,7 +34,7 @@ export default function Theater({sounds, first}) {
                                 </div>
 
                                 <div className="d-flex mb-4">
-                                    <button className="btn btn-primary rounded-pill">Dale Play Nene</button>
+                                    <button className="btn btn-primary rounded-pill">Este boton no hace nada</button>
                                 </div>
 
                                 <div className="d-flex">
