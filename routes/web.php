@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\MusicController::class, 'index']);
 
-Route::get('/dashboard', [App\Http\Controllers\DemoController::class, 'dash'])->name('dashboard');
-Route::get('/theater', [App\Http\Controllers\MusicController::class, 'index'])->name('theater');
 
-Route::resource('music', App\Http\Controllers\MusicController::class);
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', [App\Http\Controllers\MusicController::class, 'index']);
+    Route::get('/dashboard', [App\Http\Controllers\DemoController::class, 'dash'])->name('dashboard');
+    Route::get('/theater', [App\Http\Controllers\MusicController::class, 'index'])->name('theater');
+    Route::resource('music', App\Http\Controllers\MusicController::class);
+});
+
 

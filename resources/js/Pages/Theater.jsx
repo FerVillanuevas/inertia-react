@@ -6,9 +6,10 @@ import {setSound} from '../store/slices/playerSlice'
 
 import '../../css/Theater.css'
 
-export default function Theater({sounds, first}) {
+export default function Theater({sounds, user}) {
 
     const dispatch = useDispatch();
+    console.log(user)
 
     const { sound } = useSelector((state) => state.player)
 

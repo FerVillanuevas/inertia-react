@@ -18,8 +18,10 @@ header {
         font-weight: 800;
     }
 }
-main {
-    padding-bottom: 75px;
+.navbar-toggler {
+    &:focus {
+        outline: none;
+    }
 }
 .fit-cover {
     object-fit: cover;
