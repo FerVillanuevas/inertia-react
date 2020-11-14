@@ -49,7 +49,7 @@ export default function Theater({sounds, first}) {
                         </div>
                     </div>
                 </div>
-                <div className="col-12 col-md-3 position-relative mt-0 mt-md-n5 pr-3">
+                <div className="col-12 col-md-3 position-relative mt-0 mt-md-n5 pr-md-3">
                     <div className="playlist pb-4 shadow-lg">
                         <div className="no-gutters p-4 played row">
                             <div className="col-4 embed-responsive embed-responsive-1by1">

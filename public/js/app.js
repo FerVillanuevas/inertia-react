@@ -58796,7 +58796,7 @@ function Theater(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-12 py-5"
   }, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem minus praesentium soluta molestiae necessitatibus aliquid error cumque commodi laboriosam, unde suscipit ea provident doloribus, ducimus nesciunt impedit excepturi, eligendi dolores.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-12 col-md-3 position-relative mt-0 mt-md-n5 pr-3"
+    className: "col-12 col-md-3 position-relative mt-0 mt-md-n5 pr-md-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "playlist pb-4 shadow-lg"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
