@@ -6,11 +6,7 @@ import Layout from '../Layout';
 
 export default function Dashboard() {
     const dispatch = useDispatch()
-    const counter = useSelector((state) => state.counter);
-
-    const onIncremet = () => {
-        dispatch(increment());
-    }
+    const {sound} = useSelector((state) => state.player);
 
     // View: the UI definition
     return (
@@ -18,6 +14,13 @@ export default function Dashboard() {
             <div className="top-banner fancy-orange embed-responsive embed-responsive-36by9">
                 <img className="fit-cover embed-responsive-item" src="https://www.elamaku.com/wp-content/uploads/hablar-con-los-que-ya-no-estan.png" />
             </div>
+            <h1 className="p-3 text-center">
+                La info viene del store con redux
+            </h1>
+            {!_.isEmpty(sound) && <div className="p-2 text-center">
+                <code>{JSON.stringify(sound)}</code>
+            </div>}
+
         </Layout>
     )
 }

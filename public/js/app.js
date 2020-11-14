@@ -5593,7 +5593,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".playlist {\n    top: 0;\n    right: 0;\n    -webkit-backdrop-filter: blur(5px);\n            backdrop-filter: blur(5px);\n    background: rgb(33 37 41 / .95);\n    bottom: 0;\n    position: fixed;\n    padding-bottom: 75px;\n    overflow-y: auto;\n    top: 65px;\n    font-weight: 800;\n    text-transform: uppercase;\n}\n\n.playlist .list-group-item-action {\n    background: transparent;\n    cursor: pointer;\n}\n.playlist .list-group-item-action:hover {\n    background: rgba(0,0,0, .3);\n}\n.playlist .list-group-item-action.playing {\n    background: rgba(0,0,0,.5);\n}\n", ""]);
+exports.push([module.i, ".playlist {\n    -webkit-backdrop-filter: blur(5px);\n            backdrop-filter: blur(5px);\n    background: rgb(33 37 41 / .95);\n    bottom: 0;\n    overflow-y: auto;\n    font-weight: 800;\n    text-transform: uppercase;\n}\n\n.playlist .list-group-item-action {\n    background: transparent;\n    cursor: pointer;\n}\n.playlist .list-group-item-action:hover {\n    background: rgba(0,0,0, .3);\n}\n.playlist .list-group-item-action.playing {\n    background: rgba(0,0,0,.5);\n}\n", ""]);
 
 // exports
 
@@ -58591,13 +58591,11 @@ __webpack_require__.r(__webpack_exports__);
 
 function Dashboard() {
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
-  var counter = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (state) {
-    return state.counter;
-  });
 
-  var onIncremet = function onIncremet() {
-    dispatch(Object(_store_slices_counter__WEBPACK_IMPORTED_MODULE_2__["increment"])());
-  }; // View: the UI definition
+  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (state) {
+    return state.player;
+  }),
+      sound = _useSelector.sound; // View: the UI definition
 
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -58605,7 +58603,11 @@ function Dashboard() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "fit-cover embed-responsive-item",
     src: "https://www.elamaku.com/wp-content/uploads/hablar-con-los-que-ya-no-estan.png"
-  })));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "p-3 text-center"
+  }, "La info viene del store con redux"), !_.isEmpty(sound) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "p-2 text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, JSON.stringify(sound))));
 }
 
 /***/ }),
@@ -58764,13 +58766,13 @@ function Theater(_ref) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row no-gutters"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-9"
+    className: "col-12 col-md-9"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row bg-light mt-n5 no-gutters shadow-lg row"
+    className: "row bg-light mt-3 mt-md-n5 no-gutters shadow-lg row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-5 shadow-lg"
+    className: "col-12 col-md-5 shadow-lg"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "embed-responsive embed-responsive-1by1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -58778,7 +58780,7 @@ function Theater(_ref) {
     alt: "Disk Cover",
     className: "embed-responsive-item"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-7 d-flex flex-column justify-content-center p-5"
+    className: "col-12 col-md-7 d-flex flex-column justify-content-center p-3 p-md-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-flex flex-column mb-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Album title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "by Artista del album")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -58794,7 +58796,9 @@ function Theater(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-12 py-5"
   }, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem minus praesentium soluta molestiae necessitatibus aliquid error cumque commodi laboriosam, unde suscipit ea provident doloribus, ducimus nesciunt impedit excepturi, eligendi dolores.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-3 playlist"
+    className: "col-12 col-md-3 position-relative mt-0 mt-md-n5 pr-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "playlist pb-4 shadow-lg"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "no-gutters p-4 played row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -58822,7 +58826,7 @@ function Theater(_ref) {
     }, snd.name, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, isPlaying && ' · Playing')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "sound-info text-capitalize text-info"
     }, "album \xB7 artita \xB7 2020"));
-  })))));
+  }))))));
 }
 
 /***/ }),
