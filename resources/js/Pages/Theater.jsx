@@ -16,7 +16,7 @@ export default function Theater({sounds, user}) {
     useEffect(() => {
         wave.fromElement("audio","spectrum-waves", {
             type:"flower",
-            stroke: 0,
+            stroke: 5,
             colors: ['#1d2124', '#1d2124', '#1d2124', '#1d2124']
         });
     }, [wave])
@@ -29,7 +29,7 @@ export default function Theater({sounds, user}) {
                 <div className="col-12 col-md-9">
                     <div className="container">
                         <div className="align-content-center justify-content-center row spectrum">
-                            <canvas id="spectrum-waves" className="spectrum-waves"></canvas>
+                            <canvas id="spectrum-waves" height="400" className="spectrum-waves"></canvas>
                             <img className="spectrum-art" src="http://stack.test/storage//avatars/unnamed.jpg" />
                         </div>
                         <div className="row status">

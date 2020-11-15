@@ -79333,7 +79333,7 @@ function Theater(_ref) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     wave.fromElement("audio", "spectrum-waves", {
       type: "flower",
-      stroke: 0,
+      stroke: 5,
       colors: ['#1d2124', '#1d2124', '#1d2124', '#1d2124']
     });
   }, [wave]);
@@ -79353,6 +79353,7 @@ function Theater(_ref) {
     className: "align-content-center justify-content-center row spectrum"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("canvas", {
     id: "spectrum-waves",
+    height: "400",
     className: "spectrum-waves"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "spectrum-art",
