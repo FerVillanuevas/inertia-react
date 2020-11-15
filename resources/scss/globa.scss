@@ -29,6 +29,24 @@ header {
     background: #222222ec;;
     backdrop-filter: blur(5px);
 }
+.fixed-nav {
+    background: rgb(53 59 65 / 90%);
+    backdrop-filter: blur(5px);
+}
+.spectrum {
+    height: 400px;
+    position: relative;
+    &-waves {
+        width: 850px;
+        position: absolute;
+        height: 400px;
+    }
+    &-art {
+        width: 250px;
+        border-radius: 50%;
+        position: relative;
+    }
+}
 .navbar-toggler {
     &:focus {
         outline: none;
@@ -124,10 +142,25 @@ header {
 .mw-50 {
     max-width: 50%;
 }
+.pt-nav {
+    padding-top: 75px;
+}
 
 .hide {
-    @extend .d-none;
+    user-select: none;
+    pointer-events: none;
 }
 .show {
     @extend .d-block;
+}
+
+.form-control-alt {
+    background: #212529;
+    border: 0;
+    transition: all .4s ease-in-out;
+    &:focus {
+        background: #24282c;
+        color: whitesmoke;
+        @extend .shadow-sm;
+    }
 }

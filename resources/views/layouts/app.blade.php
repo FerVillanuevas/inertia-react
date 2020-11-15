@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body>
-    <main class="d-flex align-items-center vh-100 p-0">
+    <main class="d-flex align-items-center vh-100 p-0 bg-dark">
         @yield('content')
     </main>
 </body>

@@ -15,7 +15,7 @@ export default function Layout({ title, children }) {
     return (
         <>
             <Slide left when={toggle}>
-                <div className={`side-nav ${toggle ? 'd-block' : 'd-none'}`}>
+                <div className={`side-nav ${toggle ? 'show' : 'hide'}`}>
                     <div className="navbar navbar-dark p-0 pb-3">
                         <button onClick={() => {
                             setToggle(!toggle);
@@ -50,7 +50,7 @@ export default function Layout({ title, children }) {
             </Slide>
             <main>
                 <Slide top when={!toggle}>
-                    <nav className={`sticky-top bg-dark navbar navbar-dark navbar-expand-lg ${ !toggle ? 'd-flex' : 'hide'}`}>
+                    <nav className={`fixed-top fixed-nav navbar navbar-dark navbar-expand-lg ${ !toggle ? 'd-flex' : 'hide'}`}>
                         <button onClick={() => {
                             setToggle(!toggle);
                         }} className="border-0 navbar-toggler p-0" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +64,7 @@ export default function Layout({ title, children }) {
                     </nav>
                 </Slide>
 
-                <article>{children}</article>
+                <article className="pt-nav bg-dark">{children}</article>
             </main>
         </>
     )

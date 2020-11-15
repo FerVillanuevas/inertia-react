@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector} from 'react-redux';
+import { InertiaLink, usePage } from '@inertiajs/inertia-react'
 
 import '../../css/Player.css';
 import { setSound } from '../store/slices/playerSlice';
 import Slide from 'react-reveal/Slide';
+
 
 
 export default function Player() {
@@ -16,7 +18,6 @@ export default function Player() {
         duration: '00:00'
     })
     const [paused, setPaused] = useState(false);
-
 
     const toMinutes = (time) => {
         var mins = ~~((time % 3600) / 60);

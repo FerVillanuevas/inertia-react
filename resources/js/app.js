@@ -10,13 +10,15 @@ import Player from './components/Player'
 
 const el = document.getElementById('app')
 
+
+
 render(
   <Provider store={store}>
     <App
         initialPage={JSON.parse(el.dataset.page)}
         resolveComponent={name => require(`./Pages/${name}`).default}
     />
-    <Player />
+    <Player/>
   </Provider>,
   el
 )
