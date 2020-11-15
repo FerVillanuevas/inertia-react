@@ -26,7 +26,7 @@ export default function Player() {
     return (
         <>
             <Slide bottom when={!_.isEmpty(sound)}>
-                <div className="custom-player w-100 fixed-bottom">
+                <div className={`custom-player w-100 ${_.isEmpty(sound) ? 'd-none' : 'd-block'}`}>
 
                    <div className="cmp-range d-flex">
                     <input className="custom-range-bar w-100" value={time.currentWidth.toFixed(4).toString()} onChange={(e) => {

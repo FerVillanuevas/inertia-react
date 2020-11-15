@@ -7176,7 +7176,8 @@ button.bg-dark:focus {
   content: "";
 }
 
-.d-none {
+.d-none,
+.hide {
   display: none !important;
 }
 
@@ -7188,7 +7189,8 @@ button.bg-dark:focus {
   display: inline-block !important;
 }
 
-.d-block {
+.d-block,
+.show {
   display: block !important;
 }
 
@@ -10947,6 +10949,19 @@ header a {
   font-weight: 800;
 }
 
+.side-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  padding: 1.5rem;
+  background: #222222ec;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
 .navbar-toggler:focus {
   outline: none;
 }
@@ -10978,6 +10993,10 @@ header a {
 .custom-player {
   background: #343a40;
   height: 75px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  overflow: hidden;
 }
 
 .custom-player .progress {
@@ -11032,6 +11051,10 @@ header a {
 
 .cmp-range input[type=range]:focus::-webkit-slider-runnable-track {
   background: #212529;
+}
+
+.mw-50 {
+  max-width: 50%;
 }
 
 
