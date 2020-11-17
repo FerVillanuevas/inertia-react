@@ -79300,28 +79300,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Post; });
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 function Post() {
   var handlePost = function handlePost() {
     var url = 'https://zzrn-010.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/katapultOk-Redirect';
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__["Inertia"].post(url, {
+    /*             Inertia.post(url, {
+                    id: 'ID RANDOM',
+                    otro: 'Otro Param'
+                }, {
+                    onSuccess: (e) => {
+                        alert('todo bine')
+                    }
+                }) */
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, {
       id: 'ID RANDOM',
-      otro: 'Otro Param'
-    }, {
-      onSuccess: function onSuccess(e) {
-        alert('todo bine');
-      }
+      user: 'USER RANDOM'
+    }).then(function (res) {
+      return alert('all good');
+    })["catch"](function (e) {
+      return alert(e);
     });
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__["Inertia"].on('error', function (event) {
-      event.preventDefault();
-      alert(event.detail.error);
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('https://zzrn-010.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/').then(function (res) {
+      return console.log(res);
+    })["catch"](function (e) {
+      return alert(e);
     });
+    /*
+                Inertia.on('error', (event) => {
+                    event.preventDefault()
+                    alert(event.detail.error);
+                  }) */
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
     className: "btn btn-primary",
     onClick: handlePost
   }, "Post form external url"));
