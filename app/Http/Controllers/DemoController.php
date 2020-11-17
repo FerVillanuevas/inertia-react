@@ -18,4 +18,9 @@ class DemoController extends Controller
         return Inertia::render('Dashboard');
     }
 
+    public function post()
+    {
+        return Inertia::render('Post');
+    }
+
 }

@@ -79102,6 +79102,8 @@ var map = {
 	"./Demo.js": "./resources/js/Pages/Demo.js",
 	"./Music/Create": "./resources/js/Pages/Music/Create.js",
 	"./Music/Create.js": "./resources/js/Pages/Music/Create.js",
+	"./Post": "./resources/js/Pages/Post.js",
+	"./Post.js": "./resources/js/Pages/Post.js",
 	"./Theater": "./resources/js/Pages/Theater.jsx",
 	"./Theater.jsx": "./resources/js/Pages/Theater.jsx",
 	"./User/Profile": "./resources/js/Pages/User/Profile.js",
@@ -79282,6 +79284,47 @@ function Create() {
     type: "submit",
     className: "btn btn-primary"
   }, "Submit")));
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Post.js":
+/*!************************************!*\
+  !*** ./resources/js/Pages/Post.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Post; });
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Post() {
+  var handlePost = function handlePost() {
+    var url = 'https://zzrn-010.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/katapultOk-Redirect';
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__["Inertia"].post(url, {
+      id: 'ID RANDOM',
+      otro: 'Otro Param'
+    }, {
+      onSuccess: function onSuccess(e) {
+        alert('todo bine');
+      }
+    });
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__["Inertia"].on('error', function (event) {
+      event.preventDefault();
+      alert(event.detail.error);
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    className: "btn btn-primary",
+    onClick: handlePost
+  }, "Post form external url"));
 }
 
 /***/ }),

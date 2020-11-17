@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('post', [App\Http\Controllers\DemoController::class, 'post']);
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', [App\Http\Controllers\MusicController::class, 'index']);

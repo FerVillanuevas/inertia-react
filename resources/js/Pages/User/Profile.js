@@ -2,6 +2,7 @@ import { Inertia } from '@inertiajs/inertia'
 import React, {useState} from 'react'
 import Layout from '../../Layout'
 
+
 export default function Profile({user, albums}) {
 
     const [form, setForm] = useState({
@@ -33,6 +34,7 @@ export default function Profile({user, albums}) {
         Inertia.post(route('music.store'), fd)
 
     }
+
 
     const handleOnChage = (e) => {
         const {value, name} = e.target
