@@ -21,6 +21,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [App\Http\Controllers\DemoController::class, 'dash'])->name('dashboard');
     Route::get('/theater', [App\Http\Controllers\MusicController::class, 'index'])->name('theater');
     Route::resource('music', App\Http\Controllers\MusicController::class);
+    Route::resource('user', App\Http\Controllers\UserController::class);
 });
 
 

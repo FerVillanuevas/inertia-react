@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSoundsTable extends Migration
+class CreateAlbumsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateSoundsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sounds', function (Blueprint $table) {
+        Schema::create('albums', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('src');
+            $table->date('release_date');
+            $table->string('cover_art');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateSoundsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sounds');
+        Schema::dropIfExists('albums');
     }
 }

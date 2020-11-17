@@ -10,6 +10,7 @@ export default function Layout({ title, children }) {
     /* useEffect(() => {
         document.title = `Redux counter: ${1}`;
     }, [counter.value]) */
+
     const [toggle, setToggle] = useState(false)
 
     return (

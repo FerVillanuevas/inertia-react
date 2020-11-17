@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Inertia\Inertia;
-use App\Models\Sound;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class MusicController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +16,9 @@ class MusicController extends Controller
      */
     public function index()
     {
-        $sounds =  Sound::all();
-        $first =  Sound::firstOrFail();
-
-        return Inertia::render('Theater', compact('sounds', 'first'));
+        $user = Auth::user();
+        $albums = $user->albums->load('sounds');
+        return Inertia::render('User/Profile', compact('user', 'albums'));
     }
 
     /**
@@ -28,7 +28,7 @@ class MusicController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Music/Create');
+        //
     }
 
     /**
@@ -39,13 +39,7 @@ class MusicController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->file('file');
-        $sound = Sound::create([
-            "name" => $request->name,
-            "src" => $file->store('music', 's3'),
-            "album_id" => $request->album_id
-        ]);
-        return redirect('theater')->with('sucess', 'sucess');
+        //
     }
 
     /**
@@ -79,7 +73,19 @@ class MusicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $file = $request->file;
+        if($request->has('file')) {
+            $stored = $file->store('avatar', 's3');
+        }
+
+
+        $user->update([
+            'name' => $request->name,
+            'avatar' => $stored ? $stored : null
+        ]);
+
+        return $user;
     }
 
     /**
