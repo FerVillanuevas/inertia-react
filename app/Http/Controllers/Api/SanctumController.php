@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
@@ -26,6 +27,17 @@ class SanctumController extends Controller
             ]);
         }
 
-        return response()->json($user->createToken($request->device_name)->plainTextToken);
+        return response()->json([
+            'token' => $user->createToken($request->device_name)->plainTextToken,
+            'user' => $user
+        ]);
     }
+
+    public function revoke(Request $request)
+    {
+        $user = $request->user;
+        $user->tokens()->delete();
+        return response('success', 201);
+    }
+
 }
