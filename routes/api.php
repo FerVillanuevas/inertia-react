@@ -21,5 +21,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         return $request->user();
     });
 
-    Route::post('revoke', [App\Http\Controllers\Api\SanctumController::class, 'revoke']);
+    Route::delete('/sanctum/revoke', [App\Http\Controllers\Api\SanctumController::class, 'revoke']);
 });

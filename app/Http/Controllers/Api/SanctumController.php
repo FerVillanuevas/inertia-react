@@ -35,7 +35,7 @@ class SanctumController extends Controller
 
     public function revoke(Request $request)
     {
-        $user = $request->user;
+        $user = Auth::user();
         $user->tokens()->delete();
         return response('success', 201);
     }
